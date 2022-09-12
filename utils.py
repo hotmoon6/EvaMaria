@@ -10,6 +10,7 @@ import re
 import os
 from datetime import datetime
 from typing import List
+from list import list_to_hash
 from database.users_chats_db import db
 from bs4 import BeautifulSoup
 import requests
