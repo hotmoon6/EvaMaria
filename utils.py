@@ -10,7 +10,6 @@ import re
 import os
 from datetime import datetime
 from typing import List
-from list import list_to_hash
 from database.users_chats_db import db
 from bs4 import BeautifulSoup
 import requests
@@ -114,7 +113,7 @@ async def get_poster(query, bulk=False, id=False, file=None):
         "imdb_id": f"tt{movie.get('imdbID')}",
         "cast": list_to_str(movie.get("cast")),
         "runtime": list_to_str(movie.get("runtimes")),
-        "countries": list_to_str(movie.get("countries")),
+        "countries": list_to_hash(movie.get("countries")),
         "certificates": list_to_str(movie.get("certificates")),
         "languages": list_to_hash(movie.get("languages")),
         "director": list_to_str(movie.get("director")),
